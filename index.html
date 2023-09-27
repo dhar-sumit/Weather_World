@@ -1,0 +1,400 @@
+<!-- 
+
+    ---   W E A T H E R    W O R L D   ---
+
+    * @license -> MIT
+    * @copyright Sumit_Dhar, Inc. All Rights Reserved.
+    * @author Sumit Dhar  < sumitmi.2013@gmail.com >
+
+-->
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Title -->
+        <title>Weather World</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="./images/fav.png" sizes="64x64">
+
+        <!-- Bootstrap links -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        
+        <!-- Google font links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Lumanosimo&display=swap" rel="stylesheet">
+
+        <!-- CSSLinks -->
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+
+        <!--
+            --- Online ---
+        -->
+        <div class="online">
+
+            <!--
+                --- Navbar ---
+            -->
+            <nav class="navbar navbar-expand-xl mb-2 navbar-light sticky-xl-top bg-warning">
+                <div class="container-fluid px-3 justify-content-center justify-content-around justify-content-sm-evenly">
+
+                    <!-- Weather World -->
+                    <img src="./images/weather_world.jpg" alt="" class="navbar-brand col-2 col-xl-1 weather_world" width="140px">
+                    <h1 class="navbar-brand fs-2 pt-3" >WEATHER WORLD</h1>
+
+                    <!-- Toggle icon for sm, md & lg devices -->
+                    <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list fs-4 btn btn-outline-dark border-3 shadow-none"></i>
+                    </button>
+                    
+                    <!-- Collapse -->
+                    <div class="collapse navbar-collapse my-2 justify-content-xl-end" id="navbarSupportedContent">
+                        <div class="d-flex justify-content-evenly">
+
+                            <div class="d-flex searching">
+
+                                <!-- Searching -->
+                                <input class="form-control me-1 me-sm-3 py-2 py-sm-3  fs-5 ps-sm-3 shadow-none search_box" list="suggestion" type="search" placeholder="Enter the city....." aria-label="Search">
+                                <datalist id="suggestion"></datalist>
+                                <button class="btn btn-outline-light border-3 me-1 me-sm-3 me-xxl-5 shadow-none search_btn" type="submit">
+                                    <img src="./images/searchme.png" alt="" width="40px">
+                                </button> 
+                            </div>
+                                
+                            <div class="d-flex location_darkmode justify-content-evenly">
+
+                                <!-- Current Location -->
+                                <button onclick="currentLocation()" class="btn btn-outline-dark border-3 me-1 me-sm-3 shadow-none" type="button">
+                                    <i class="bi bi-pin-map-fill fs-3"></i>
+                                </button>
+
+                                <!-- Toggle icon for darkmode -->
+                                <button onclick="darkmode()" class="btn btn-outline-dark border-3 shadow-none" type="button">
+                                    <i class="bi bi-brightness-high-fill fs-3 darkmode"></i>
+                                </button>                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!--
+                --- Main ---
+            -->
+            <main class="container-fluid py-3 d-xxl-flex align-items-center">
+
+                <!--
+                    --- Left Content ---
+                -->
+                <div class="container-fluid col-xxl-3 d-lg-flex align-items-center mb-4 mb-xxl-0 d-xxl-block">
+
+                    <!-- 1st div -->
+                    <div class="container text-center pb-2 left col-lg-5 col-xxl-12 mb-4 me-lg-4 mb-xl-4">
+                        <div class="d-flex align-items-center justify-content-center">
+                            
+                            <!-- Temperature & Weather type -->
+                            <div class="col-6 pt-3">
+                                <h1 class="temp temperature">25<sup>&deg;C</sup></h1>
+                                <h2 class="weather_type">Thunderstorm</h2>
+                            </div>
+
+                            <!-- Weather Icon -->
+                            <div class="col-6 d-flex justify-content-center">
+                                <img src="./images/thunderstorm.png" alt="weather_icon" class="col-10 weather_icon">
+                            </div>
+                        </div>
+                        
+                        <div class="mx-3">
+                            <h2 class="hr"></h2>
+                        </div>
+
+                        <!-- Date -->
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i class="bi bi-calendar2-fill fs-3 me-3"></i>
+                            <h4 class="day_month pt-2"></i>Thursday 24, Aug</h2>                        
+                        </div>
+
+                        <!-- location -->
+                        <div class="d-flex align-items-center justify-content-center">
+                            <h4 class="location me-2 pt-2">Barasat, IN </h4>
+                            <i class="bi bi-geo-alt-fill fs-3"></i>
+                        </div>
+                    </div>
+
+                    <!-- 2nd div -->
+                    <div class="container py-2 col-lg-5 col-xxl-12 left text-center">
+
+                        <!-- Forecast on 1st day -->
+                        <div class="d-flex pt-2 justify-content-evenly justify-content-lg-evenly">
+                            <div class="col-4 col-lg-4 col-xxl-4 ms-xxl-1 d-flex align-items-center justify-content-center">
+                                <img src="./images/thunderstorm.png" alt="forecast_icon" class="col-6 me-2 forecast_icon1">
+                                <h2 class="temperature1 temp_forecast pt-2">25<sup>&deg;C</sup></h2>
+                            </div>
+                            <div class="col-5 col-lg-5 col-xxl-6 me-3 d-flex align-items-center justify-content-center">
+                                <h4 class="mt-2 day_month1">Thursday 17, Aug</h4>
+                            </div>
+                        </div>
+
+                        <!-- Forecast on 2nd day -->
+                        <div class="d-flex pt-2 justify-content-evenly justify-content-lg-evenly">
+                            <div class="col-4 col-lg-4 col-xxl-4 ms-xxl-1 d-flex align-items-center justify-content-center">
+                                <img src="./images/thunderstorm.png" alt="forecast_icon" class="col-6 me-2 forecast_icon2">
+                                <h2 class="temperature2 temp_forecast pt-2">25<sup>&deg;C</sup></h2>
+                            </div>
+                            <div class="col-5 col-lg-5 col-xxl-6 me-3 d-flex align-items-center justify-content-center">
+                                <h4 class="mt-2 day_month2">Thursday 17, Aug</h4>
+                            </div>
+                        </div>
+
+                        <!-- Forecast on 3rd day -->
+                        <div class="d-flex pt-2 justify-content-evenly justify-content-lg-evenly">
+                            <div class="col-4 col-lg-4 col-xxl-4 ms-xxl-1 d-flex align-items-center justify-content-center">
+                                <img src="./images/thunderstorm.png" alt="forecast_icon" class="col-6 me-2 forecast_icon3">
+                                <h2 class="temperature3 temp_forecast pt-2">25<sup>&deg;C</sup></h2>
+                            </div>
+                            <div class="col-5 col-lg-5 col-xxl-6 me-3 d-flex align-items-center justify-content-center">
+                                <h4 class="mt-2 day_month3">Thursday 17, Aug</h4>
+                            </div>
+                        </div>
+
+                        <!-- Forecast on 4th day -->
+                        <div class="d-flex pt-2 justify-content-evenly justify-content-lg-evenly">
+                            <div class="col-4 col-lg-4 col-xxl-4 ms-xxl-1 d-flex align-items-center justify-content-center">
+                                <img src="./images/thunderstorm.png" alt="forecast_icon" class="col-6 me-2 forecast_icon4">
+                                <h2 class="temperature4 temp_forecast pt-2">25<sup>&deg;C</sup></h2>
+                            </div>
+                            <div class="col-5 col-lg-5 col-xxl-6 me-3 d-flex align-items-center justify-content-center">
+                                <h4 class="mt-2 day_month4">Thursday 17, Aug</h4>
+                            </div>
+                        </div>
+
+                        <!-- Forecast on 5th day -->
+                        <div class="d-flex pt-2 justify-content-evenly justify-content-lg-evenly">
+                            <div class="col-4 col-lg-4 col-xxl-4 ms-xxl-1 d-flex align-items-center justify-content-center">
+                                <img src="./images/thunderstorm.png" alt="forecast_icon" class="col-6 me-2 forecast_icon5">
+                                <h2 class="temperature5 temp_forecast pt-2">25<sup>&deg;C</sup></h2>
+                            </div>
+                            <div class="col-5 col-lg-5 col-xxl-6 me-3 d-flex align-items-center justify-content-center">
+                                <h4 class="mt-2 day_month5">Thursday 17, Aug</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                    --- Right Content ---
+                -->
+                <div class="container-fluid px-lg-5 px-xxl-2 col-xxl-8">
+
+                    <!-- 1st div -->
+                    <div class="container pb-sm-4 pb-md-0 pt-md-3 pt-xxl-0 right">
+
+                        <!-- Time -->
+                        <div class="d-md-flex text-center justify-content-md-between mb-md-4 mb-xxl-0 p-4 pb-2">
+                            <h2 class="mb-4 mb-md-0">Weather Information</h1>
+                            <h2 class="time">11 : 49 : 33 PM</h1>
+                        </div>     
+                        
+                        <!-- Elements -->
+                        <div class="d-md-flex pb-1 flex-wrap">
+
+                            <!-- Sun Rise -->
+                            <div class="mb-xxl-2 col-md-6 col-xl-4 d-flex align-items-center justify-content-center justify-content-xl-start">
+                                <div class="col-5 text-center">
+                                    <img src="./images/sunrise.png" alt="" class="col-7 col-md-12">
+                                </div>
+                                <div class="col-6 text-center pt-4">
+                                    <h1>Sun Rise</h1>
+                                    <h3 class="sunrise">05 : 15 AM</h3>
+                                </div>
+                            </div>
+
+                            <!-- Humidity -->
+                            <div class="mb-md-4 mb-xxl-2 col-md-6 col-xl-4 d-flex align-items-center justify-content-center">
+                                <div class="col-5 p-2 text-center">
+                                    <img src="./images/humidity.jpg" alt="" class="col-7 col-md-12 rounded-3">
+                                </div>
+                                <div class="col-6 text-center pt-4">
+                                    <h1>Humidity</h1>
+                                    <h3 class="humidity">70%</h3>
+                                </div>
+                            </div>
+
+                            <!-- Visibility -->
+                            <div class="mb-md-4 mb-xxl-2 col-md-6 col-xl-4 d-flex align-items-center justify-content-center justify-content-xl-end">
+                                <div class="col-5 text-center">
+                                    <img src="./images/visibility.png" alt="" class="col-7 col-md-12 rounded-3">
+                                </div>
+                                <div class="col-6 text-center pt-4">
+                                    <h1>Visibility</h1>
+                                    <h3 class="visibility">4.0 km</h3>
+                                </div>
+                            </div>   
+
+                            <!-- Sun Set -->                 
+                            <div class="mb-sm-4 mb-xxl-2 col-md-6 col-xl-4 d-flex align-items-center justify-content-center justify-content-xl-start">
+                                <div class="col-5 text-center">
+                                    <img src="./images/sunset.png" alt="" class="col-7 col-md-9 pt-3">
+                                </div>
+                                <div class="col-6 text-center pt-4">
+                                    <h1>Sun Set</h1>
+                                    <h3 class="sunset">05 : 15 PM</h3>
+                                </div>
+                            </div>
+
+                            <!-- Pressure -->
+                            <div class="mb-sm-4 mb-xxl-2 col-md-6 col-xl-4 d-flex align-items-center justify-content-center">
+                                <div class="col-5 p-2 text-center">
+                                    <img src="./images/pressure.jpg" alt="" class="col-7 col-md-12 rounded-3">
+                                </div>
+                                <div class="col-6 text-center pt-4">
+                                    <h1>Pressure</h1>
+                                    <h3 class="pressure">1008 hPa</h3>
+                                </div>
+                            </div>
+
+                            <!-- Wind -->
+                            <div class="col-md-6 col-xl-4 d-flex align-items-center justify-content-center justify-content-xl-end">
+                                <div class="col-5 p-2 text-center">
+                                    <img src="./images/wind.jpg" alt="" class="col-7 col-md-12 rounded-3">
+                                </div>
+                                <div class="col-6 text-center pt-4">
+                                    <h1>Wind</h1>
+                                    <h3 class="wind">3.6 km/hr</h3>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+
+                    <!-- 2nd div -->
+                    <div class="d-flex px-md-5 px-xl-0 flex-wrap justify-content-evenly">
+
+                        <!-- Hourly foercast 1 -->
+                        <div class="col-5 mt-4 col-sm-3 me-sm-1 me-xl-0 col-xl-2 pt-3 weather_icon1 text-center rounded-4 right">
+                            <h4>03 PM, FRI</h4>
+                            <img src="./images/thunderstorm.png" alt="weather-icon" class="w-75">
+                            <h4>Thunderstorm</h4>
+                            <h4>25<sup>&deg;C</sup></h4>
+                        </div>
+
+                        <!-- Hourly foercast 2 -->
+                        <div class="col-5 mt-4 col-sm-3 me-sm-1 me-xl-0 col-xl-2 pt-3 weather_icon2 text-center rounded-4 right">
+                            <h4>03 PM, FRI</h4>
+                            <img src="./images/thunderstorm.png" alt="weather-icon" class="w-75">
+                            <h4>Thunderstorm</h4>
+                            <h4>25<sup>&deg;C</sup></h4>
+                        </div>
+
+                        <!-- Hourly foercast 3 -->
+                        <div class="col-5 mt-4 col-sm-3 me-sm-1 me-xl-0 col-xl-2 pt-3 weather_icon3 text-center rounded-4 right">
+                            <h4>03 PM, FRI</h4>
+                            <img src="./images/thunderstorm.png" alt="weather-icon" class="w-75">
+                            <h4>Thunderstorm</h4>
+                            <h4>25<sup>&deg;C</sup></h4>
+                        </div>
+
+                        <!-- Hourly foercast 4 -->
+                        <div class="col-5 mt-4 col-sm-3 me-sm-1 me-xl-0 col-xl-2 pt-3 weather_icon4 text-center rounded-4 right">
+                            <h4>03 PM, FRI</h4>
+                            <img src="./images/thunderstorm.png" alt="weather-icon" class="w-75">
+                            <h4>Thunderstorm</h4>
+                            <h4>25<sup>&deg;C</sup></h4>
+                        </div>
+
+                        <!-- Hourly foercast 5 -->
+                        <div class="col-5 mt-4 col-sm-3 me-sm-1 me-xl-0 col-xl-2 pt-3 weather_icon5 text-center rounded-4 right">
+                            <h4>03 PM, FRI</h4>
+                            <img src="./images/thunderstorm.png" alt="weather-icon" class="w-75">
+                            <h4>Thunderstorm</h4>
+                            <h4>25<sup>&deg;C</sup></h4>
+                        </div>
+
+                        <!-- Hourly foercast 6 (only for devices less than xl size) -->
+                        <div class="d-xl-none col-5 mt-4 col-sm-3 me-sm-1 me-xl-0 col-xl-2 pt-3 weather_icon6 text-center rounded-4 right">
+                            <h4>03 PM, FRI</h4>
+                            <img src="./images/thunderstorm.png" alt="weather-icon" class="w-75">
+                            <h4>Thunderstorm</h4>
+                            <h4>25<sup>&deg;C</sup></h4>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+            <!--
+                --- Error Section ---
+            -->
+            <div class="container">
+
+                <!-- Current Location -->
+                <div class="modal fade" id="location_not_fetched" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-2" id="exampleModalLabel">Current Location - <span class="fs-4">access denied</span></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <h5><i class="bi bi-geo-fill fs-1"></i> To use current location services, you must grant permission to access your location.</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Incorrect Input -->
+                <div class="modal fade" id="incorrect_input" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title" id="exampleModalLabel">“ Oops! Wrong city name ” <i class="bi bi-exclamation-circle-fill text-warning fs-1"></i></h1>                </div>
+                            <div class="modal-body text-center">
+                                <h4><i class="bi bi-check2-all text-success fs-2"></i> Please provide the correct city name...</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+                --- Copyright ---
+            -->
+            <div class="text-center my-2 pt-2 copyRight">
+                <h5>" Copyright © 2023 Sumit_Dhar, Inc. All Rights Reserved. "</h5>
+            </div>
+        </div>
+
+        <!--
+            --- OFFLINE ---
+        -->
+        <div class="offline">
+            <div class="container min-vh-100 justify-content-center align-items-center">
+                <div class="text-center">
+                    <img src="./images/offline.jpg" alt="offline" class="offline-image my-5 mb-xxl-3">
+                    <h1 class="d-inline-block d-sm-flex flex-wrap align-items-center justify-content-center mb-4">It seems that you are offline.....&nbsp;<img src="./images/offline_icon.jpg" alt="offline-icon" class="mb-4 mb-xxl-2 offline-icon"></h1>
+                    <h2>Please check your internet connection.</h1>
+                </div>
+
+                <!--
+                    --- Copyright ---
+                -->
+                <div class="text-center mt-3 mt-xxl-4 pt-2">
+                    <h5>" Copyright © 2023 Sumit_Dhar, Inc. All Rights Reserved. "</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript links -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>

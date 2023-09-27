@@ -1,0 +1,184 @@
+/* 
+
+    ---   W E A T H E R    W O R L D   ---
+
+    * @license -> MIT
+    * @copyright Sumit_Dhar, Inc. All Rights Reserved.
+    * @author Sumit Dhar  < sumitmi.2013@gmail.com > 
+    
+*/
+
+
+/*-----------------------------------*\
+         --- All Elements ---
+\*-----------------------------------*/
+
+*{
+    font-family: 'Kalam', cursive;
+}
+
+
+
+/* --- Body --- */
+body{
+    background: linear-gradient(10deg, rgba(149,152,99,0.6503851540616247) 0%, rgba(255,255,255,0.8884803921568627) 100%);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/*-----------------------------------*\
+         --- Online ---
+\*-----------------------------------*/
+
+main{
+    filter: blur(25px);
+    transition: filter 1s;
+}
+
+input::-webkit-calendar-picker-indicator{
+    visibility: hidden;
+}
+
+
+/* --- Left & Right Content --- */
+
+.temp{
+    font-size: 80px;
+    font-family: 'Lumanosimo', cursive;
+}
+
+.temp > sup {
+    font-size: 50px;
+    font-family: 'Lumanosimo', cursive;
+}
+
+.hr {
+    background-color: black;
+    height: 2px;
+}
+
+.temp_forecast {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Lumanosimo', cursive;
+}
+
+.temp_forecast > sup {
+    font-size: 18px;
+}
+
+.left, .right {
+    background: linear-gradient(148deg, rgba(176,184,50,0.8520658263305322) 0%, rgba(102,176,138,0.8884803921568627) 100%);
+    border-radius: 20px;
+    color: black;
+}
+
+
+
+/*-----------------------------------*\
+         --- Offline ---
+\*-----------------------------------*/
+
+.offline-image{
+    width: 500px;
+    border-radius: 40px;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.offline-icon{
+    width: 70px;
+    border-radius: 20px;
+}
+
+
+
+/*-----------------------------------*\
+          --- Responsive ---
+\*-----------------------------------*/
+
+/* --- Screen size  >= 1400px --- */
+@media screen and (min-width: 1400px){    
+    input[type="search"]{
+        width: 650px;
+    }
+}
+
+/* --- 1200px <=  Screen Size  <= 1400px --- */
+@media screen and (min-width: 700px) and (max-width: 1400px){    
+    input[type="search"]{
+        width: 450px;
+    }
+}
+
+/* --- Screen size  <= 991px --- */
+@media screen and (max-width: 991px){   
+    .date_location{
+        font-size: 30px;
+    } 
+    .temp_forecast {
+        font-size: 40px;
+    }
+    .temp_forecast > sup {
+        font-size: 30px;
+    }
+    .day_month1, .day_month2, .day_month3,
+    .day_month4, .day_month5, .day_month6{
+        font-size: 30px;
+    }
+}
+
+/* --- 770px <=  Screen Size  <= 992px --- */
+@media screen and (min-width: 770px) and (max-width: 992px){    
+    .temp{
+        font-size: 100px;
+    }
+}
+
+/* --- Screen size  <= 768px --- */
+@media screen and (max-width: 768px) {    
+    .offline-image{
+        width: 380px;
+        border-radius: 40px;
+        box-shadow: 5px 10px 18px #888888;
+    }
+    
+    .offline-icon{
+        width: 30px;
+    }
+}
+
+/* --- Screen size  <= 430px --- */
+@media screen and (max-width: 430px){    
+    input[type="search"]{
+        width: 180px;
+    }
+    .weather_world {
+        display: none;
+    }
+    .searching > button > img{
+        width: 20px;
+    }
+    .temp_forecast {
+        font-size: 30px;
+    }
+    .temp_forecast > sup {
+        font-size: 20px;
+    }
+    .day_month1, .day_month2, .day_month3,
+    .day_month4, .day_month5, .day_month6{
+        font-size: 20px;
+    }
+    .offline-image{
+        width: 300px;
+        border-radius: 40px;
+        box-shadow: 5px 10px 18px #888888;
+    }
+    
+    .offline-icon{
+        width: 40px;
+    }
+}
