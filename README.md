@@ -42,7 +42,7 @@ Here's why :
 * User can toggle between light mode and dark mode and get access to weather report of any location of our motherland at any time.
 * It is accessible to all the devices and highly responsive, enhancing compatibility mode.
 
-Check this amazing website on - ....
+Check this amazing website on - https://myweatherworld.netlify.app
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,7 +129,7 @@ See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact 🤝 🤝
 
-Sumit Dhar - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Author: Sumit Dhar
 
 Project Link: [https://github.com/dhar-sumit/Weather_World][Project-link]
 
@@ -146,4 +146,4 @@ Website Link: [Weather World][Weather-World-link]
 [WeatherAPI.com]: https://t.ly/uywlq
 [WeatherAPI-url]: https://openweathermap.org/
 [Project-link]: https://github.com/dhar-sumit/Weather_World
-[Weather-World-link]: 
+[Weather-World-link]: https://myweatherworld.netlify.app

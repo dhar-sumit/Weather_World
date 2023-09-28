@@ -13,7 +13,7 @@
          --- API key & URL ---
 \*-----------------------------------*/
 
-const apiKey = "5b5273524ddd696880c454799c6a4131";
+const apiKey = "Enter your API key";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const forecastApiUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric&q=";
 const searchHelper = "https://api.teleport.org/api/cities/?search=";
@@ -80,7 +80,6 @@ async function checkWeather(city){
 
     /* --- Error --- */
     if(response.status === 404 || forecastResponse.status === 404){
-        console.log("error");
         const myModal = new bootstrap.Modal('#incorrect_input');
         myModal.show();
     }
@@ -195,7 +194,6 @@ searchBox.addEventListener('input', async e => {
 \*-----------------------------------*/
 
 function success(pos){
-    console.log(pos);
 
     let latitude = pos.coords.latitude;
     let longitude = pos.coords.longitude;
@@ -227,6 +225,7 @@ function error(){
         .catch( err => myModal.show() )
     })
     .catch( err => myModal.show() )
+    
     return;
 }
 
@@ -297,7 +296,6 @@ function Online(){
     document.querySelector('.online').style.display = '';
     
     currentLocation();
-    console.log('online');
 
     return;
 }
@@ -305,8 +303,6 @@ function Online(){
 function Offline(){
     document.querySelector('.online').style.display = 'none';
     document.querySelector('.offline').style.display = '';
-
-    console.log("offline");
 
     return;
 }
